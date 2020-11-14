@@ -23,6 +23,7 @@
   <body>
     <script>
       window.onload = function() {
+        // define the map data
         var map = L.map('mapid', {
           center: [48.666700830713864, 9.41056505665886],
           zoom: 14,
@@ -33,8 +34,14 @@
             [48.689767005793307, 9.5100841434319978]
           ]
         })
+        // 
         L.tileLayer('assets/maps/tiles/{z}/{x}/{y}.png', {
-          attribution: 'Map tiles generated for local use by <a href="http://maperitive.net">Maperitive</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.'
+          attribution: 'Map tiles generated for local use by' +
+          '<a href="http://maperitive.net">Maperitive</a>, under' +
+          '<a href="http://creativecommons.org/licenses/by/3.0">' +
+          'CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">' +
+          'OpenStreetMap</a>, under' +
+          '<a href="http://www.openstreetmap.org/copyright">ODbL</a>.'
         }).addTo(map)
 
       }
