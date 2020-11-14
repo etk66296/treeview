@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>treeview</title>
+    <link rel="shortcut icon" href="assets/favicon.ico">
+    <link
+      rel="stylesheet" href="src/3rd/leaflet/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <script src="src/3rd/leaflet/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin="">
+    </script>
+    <style>
+      html {
+        background-color: #ffffff;
+        /* overflow: hidden; */
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      window.onload = function() {
+        var map = L.map('mapid', {
+          center: [48.666700830713864, 9.41056505665886],
+          zoom: 14,
+          minZoom: 12,
+          maxZoom: 17,
+          maxBounds: [
+            [48.643634655634429, 9.3110459698857237],
+            [48.689767005793307, 9.5100841434319978]
+          ]
+        })
+        L.tileLayer('assets/maps/tiles/{z}/{x}/{y}.png', {
+          attribution: 'Map tiles generated for local use by <a href="http://maperitive.net">Maperitive</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.'
+        }).addTo(map)
+
+      }
+    </script>
+    <!-- <header>
+    </header> -->
+    <main>
+      <div style="background-color: #000; height: 100vh; width: 100vw" class="" id="mapid">
+      </div>
+    </main>
+    <!-- <footer>
+    </footer> -->
+  </body>
+</html>
