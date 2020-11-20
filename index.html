@@ -9,6 +9,7 @@
       integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
       crossorigin=""
     />
+    <script src="src/3rd/cryptico.min.js"></script>
     <script src="src/3rd/leaflet/leaflet.js"
       integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
       crossorigin="">
@@ -133,11 +134,29 @@
         })
 
 
-        // login request
+        // login request -->
+        let getAdminPermission = function(passPhrase) {
+          console.log('random string: ', passPhrase)
+          // get the user data
+          let inputName = document.getElementById('inputName').value
+          let inputPassword = document.getElementById('inputPassword').value
+
+          // generate transferable data
+          let rsaKey = cryptico.generateRSAKey(passPhrase, 512)
+          let keyString = cryptico.publicKeyString(rsaKey)
+          let cipherString = cryptico.encrypt(inputPassword, keyString).cipher
+          // test: var decryptionResult = cryptico.decrypt(cipherString, rsaKey)
+
+          loginRequest((response) => {
+            console.log('server response: ', response)
+          },'name=' + inputName + '&password=' + cipherString)
+        }
+
         let loginButto = document.getElementById("loginButton")
         loginButton.addEventListener("click", () => {
-          loginRequest()
+          connectRequest(getAdminPermission)
         })
+        // <-- login request
       }
     </script>
     <header>
@@ -145,9 +164,9 @@
         <div id="loginButton" style="background-color: #4CAF50;">login</div>
         <div id="addMeadowButton">add meadow</div>
         <div id="addTreeButton">add tree</div>
-        <input style="margin-left: 5px; float: right; font-size: 10px;" type="text" value="">
+        <input id="inputPassword" style="margin-left: 5px; float: right; font-size: 10px;" type="text" value="">
         <label style="color: #fff; margin-left: 5px; float: right; font-size: 10px;">password</label>
-        <input style="margin-left: 5px; float: right; font-size: 10px;" type="text" value="">
+        <input id="inputName" style="margin-left: 5px; float: right; font-size: 10px;" type="text" value="">
         <label style="color: #fff; margin-left: 5px; float: right; font-size: 10px;">name</label>
       </div> 
     </header>
