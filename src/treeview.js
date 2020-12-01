@@ -26,9 +26,9 @@ postRequest = function(onSuccess, params, url) {
 }
 
 loginRequest = function(onSuccess, params) {
-  postRequest(onSuccess, params, "http://localhost:9999/src/login.php")
+  postRequest(onSuccess, params, "http://localhost:9999/submit.php")
 }
 
-connectRequest = function(onSuccess) {
-  postRequest(onSuccess, '', "http://localhost:9999/src/connect.php")
+connectRequest = function(onSuccess, user) {
+  postRequest(onSuccess, user, "http://localhost:9999/src/connect.php")
 }
