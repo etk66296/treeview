@@ -1,18 +1,8 @@
 <?php
-require('src/header.php');
+  require('src/header.php');
 ?>
 <script>
   window.onload = function() {
-    // let loginButto = document.getElementById("loginButton")
-    // loginButton.addEventListener("click", (response) => {
-    //   let id = document.getElementById("inputName").value
-    //   let pw = document.getElementById("inputPassword").value
-    //   // connectRequest(xhttp_connect, 'testuser')
-    //   postRequest((response) => {
-    //     console.log(response)
-    //   }, '{id:' + id + ',pw:'+ pw + '}', './submit.php')
-    // })
-
     var map = L.map('mapid', {
       center: [48.666700830713864, 9.41056505665886],
       zoom: 14,
@@ -32,12 +22,40 @@ require('src/header.php');
         'OpenStreetMap</a>, under' +
         '<a href="http://www.openstreetmap.org/copyright">ODbL</a>.'
     }).addTo(map)
+
+    // show the trees
+    requestTreeLayerData('assets/treeData/treeData.json', (response) => {
+      L.geoJSON(response, {
+        onEachFeature: (feature, layer) => {
+		      let popupContent =  "<ul>" + 
+            "<li>Sorte: " + feature.properties.cultivar + "</li>" +
+            "<li>Familie: " + feature.properties.family + "</li>" +
+            "<li>Gattung: " + feature.properties.kind + "</li>" +
+            "<li>" + 
+            "<a href=" + feature.properties.wikipediaLink + ">wiki</a>" +
+            "</li>" +
+            "<li>Pos: " + String(feature.geometry.coordinates) + "</li>" +
+            "</ul>"
+		      layer.bindPopup(popupContent)
+	      },
+        pointToLayer: function (feature, latlng) {
+          return L.circleMarker(latlng, {
+            radius: 4,
+            fillColor: "#ff7800",
+            color: "#00ff00",
+            weight: 2,
+            opacity: 1,
+            fillOpacity: 0.5
+          })
+        }
+      }).addTo(map)
+    })
   }
 </script>
+
 <main>
   <div id="mapid">
   </div>
 </main>
-
 
 <?php require('src/footer.php');?>

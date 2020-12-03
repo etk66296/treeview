@@ -1,20 +1,43 @@
 {
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "id": 0,
-      "type": "Feature",
-      "properties": {
-        "cultivar": "Schöne aus Boskoop",
-        "wikipediaLink": "https://de.wikipedia.org/wiki/Sch%C3%B6ner_aus_Boskoop",
-        "kind": "Apfel",
-        "family": "Rosengewächse"
-
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [9.4029688, 48.6792663]
-      }
-    }
-  ]
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "id": 0,
+            "type": "Feature",
+            "properties": {
+                "cultivar": "Sch\u00f6ne aus Boskoop",
+                "wikipediaLink": "https:\/\/de.wikipedia.org\/wiki\/Sch%C3%B6ner_aus_Boskoop",
+                "kind": "Apfel",
+                "family": "Rosengew\u00e4chse",
+                "situation": "VeryHealthy",
+                "plantingYear": "ca. 1960"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.4029688,
+                    48.6792663
+                ]
+            }
+        },
+        {
+            "id": 1,
+            "type": "Feature",
+            "properties": {
+                "cultivar": "Pinova",
+                "wikipediaLink": "https:\/\/de.wikipedia.org\/wiki\/Pinova",
+                "kind": "Apfel",
+                "family": "Rosengew\u00e4chs",
+                "situation": "Healthy",
+                "plantingYear": "2020"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "9.392676",
+                    "48.664001"
+                ]
+            }
+        }
+    ]
 }
