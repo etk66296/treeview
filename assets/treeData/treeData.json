@@ -6,11 +6,12 @@
             "type": "Feature",
             "properties": {
                 "cultivar": "Sch\u00f6ne aus Boskoop",
-                "wikipediaLink": "https:\/\/de.wikipedia.org\/wiki\/Sch%C3%B6ner_aus_Boskoop",
-                "kind": "Apfel",
                 "family": "Rosengew\u00e4chse",
-                "situation": "VeryHealthy",
-                "plantingYear": "ca. 1960"
+                "kind": "Apfel",
+                "plantingYear": "ca. 1960",
+                "health": "gesund",
+                "situation": "mittel",
+                "wikipediaLink": "https:\/\/de.wikipedia.org\/wiki\/Sch%C3%B6ner_aus_Boskoop"
             },
             "geometry": {
                 "type": "Point",
@@ -25,11 +26,12 @@
             "type": "Feature",
             "properties": {
                 "cultivar": "Pinova",
-                "wikipediaLink": "https:\/\/de.wikipedia.org\/wiki\/Pinova",
-                "kind": "Apfel",
                 "family": "Rosengew\u00e4chs",
-                "situation": "Healthy",
-                "plantingYear": "2020"
+                "kind": "Apfel",
+                "plantingYear": "2020",
+                "health": "sehr gesund",
+                "situation": "mittel",
+                "wikipediaLink": "https:\/\/de.wikipedia.org\/wiki\/Pinova"
             },
             "geometry": {
                 "type": "Point",

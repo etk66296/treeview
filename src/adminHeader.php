@@ -203,15 +203,23 @@
     <div>
     <label for="situation">Zustand___</label>
       <select id="TreeSituation" name="situation">
-        <option value="VeryHealthy">sehr gesund</option>
-        <option value="Healthy">gesund</option>
-        <option value="MediumHealthy">mittel gesund</option>
-        <option value="LessHealthy">weniger gesund</option>
-        <option value="SlightlyIll">leicht krank</option>
-        <option value="MediumIll">mittel krank</option>
-        <option value="Ill">krank</option>
-        <option value="SeriouslyIll">ernsthaft krank</option>
-        <option value="Dead">tot</option>
+        <option value="gut">gut</option>
+        <option value="mittel">mittel</option>
+        <option value="schlecht">schlecht</option>
+      </select>
+    </div>
+    <div>
+    <label for="health">Gesundheit</label>
+      <select id="TreeHealth" name="health">
+        <option value="sehr gesund">sehr gesund</option>
+        <option value="gesund">gesund</option>
+        <option value="mittel gesund">mittel gesund</option>
+        <option value="weniger gesund">weniger gesund</option>
+        <option value="leicht krank">leicht krank</option>
+        <option value="mittel krank">mittel krank</option>
+        <option value="krank">krank</option>
+        <option value="ernsthaft krank">ernsthaft krank</option>
+        <option value="tot">tot</option>
       </select>
     </div>
     <div>

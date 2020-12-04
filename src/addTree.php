@@ -13,11 +13,12 @@
 	    'cultivar'=> $_POST['cultivar'],
 	    'family'=> $_POST['family'],
 	    'kind'=>$_POST['kind'],
+      'plantingYear'=> $_POST['plantingYear'],
+      'health'=> $_POST['health'],
+      'situation'=> $_POST['situation'],
       'wikiLink'=> $_POST['wikiLink'],
       'long'=> $_POST['long'],
       'lat'=> $_POST['lat'],
-      'situation'=> $_POST['situation'],
-      'plantingYear'=> $_POST['plantingYear']
 	  );
 
 	  //Get data from existing json file
@@ -30,11 +31,12 @@
     
     $lastTreeCpy['id'] = $lastTreeCpy['id'] + 1;
     $lastTreeCpy['properties']['cultivar'] = $formdata['cultivar'];
-    $lastTreeCpy['properties']['wikipediaLink'] = $formdata['wikiLink'];
-    $lastTreeCpy['properties']['kind'] = $formdata['kind'];
     $lastTreeCpy['properties']['family'] = $formdata['family'];
-    $lastTreeCpy['properties']['situation'] = $formdata['situation'];
+    $lastTreeCpy['properties']['kind'] = $formdata['kind'];
     $lastTreeCpy['properties']['plantingYear'] = $formdata['plantingYear'];
+    $lastTreeCpy['properties']['health'] = $formdata['health'];
+    $lastTreeCpy['properties']['situation'] = $formdata['situation'];
+    $lastTreeCpy['properties']['wikipediaLink'] = $formdata['wikiLink'];
     $lastTreeCpy['geometry']['coordinates'] = array($formdata['long'], $formdata['lat']);
 
 

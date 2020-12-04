@@ -40,11 +40,15 @@
             "<li>Sorte: " + feature.properties.cultivar + "</li>" +
             "<li>Familie: " + feature.properties.family + "</li>" +
             "<li>Gattung: " + feature.properties.kind + "</li>" +
+            "<li>Pflanzjahr: " + feature.properties.plantingYear + "</li>" +
+            "<li>Gesundheitszustand: " + feature.properties.health + "</li>" +
+            "<li>Pflegezustand: " + feature.properties.situation + "</li>" +
             "<li>" + 
             "<a href=" + feature.properties.wikipediaLink + ">wiki</a>" +
             "</li>" +
             "<li>Pos: " + String(feature.geometry.coordinates) + "</li>" +
             "</ul>"
+
 		      layer.bindPopup(popupContent)
 	      },
         pointToLayer: function (feature, latlng) {
