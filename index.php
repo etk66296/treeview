@@ -35,8 +35,28 @@
     // show the trees
     requestTreeLayerData('assets/treeData/treeData.json', (response) => {
       L.geoJSON(response, {
+        userFunction: () => {
+          console.log("Hello")
+        },
         onEachFeature: (feature, layer) => {
-		      let popupContent =  "<ul>" + 
+
+          let jsInjection = "" +
+            "openaddTreeForm();" +
+            "document.getElementById('idSubmitButton').innerHTML = 'update';" + 
+            "document.getElementById('idTreeIDHiddenInput').value = '" + feature.id + "';" +
+            "document.getElementById('idCultivarInput').value = '" + feature.properties.cultivar + "';" +
+            "document.getElementById('idFamilyInput').value = '" + feature.properties.family + "';" +
+            "document.getElementById('idKindInput').value = '" + feature.properties.kind + "';" +
+            "document.getElementById('idplantingYearInput').value = '" + feature.properties.plantingYear + "';" +
+            "document.getElementById('idwikiLinkInput').value = '" + feature.properties.wikipediaLink + "';" +
+            "document.getElementById('idLongInput').value = '" + String(feature.geometry.coordinates[0]) + "';" +
+            "document.getElementById('idLatInput').value = '" + String(feature.geometry.coordinates[1]) + "';" +
+            "document.getElementById('TreeSituation').value = '" + String(feature.properties.situation) + "';"
+            "document.getElementById('TreeHealth').value = '" + String(feature.properties.health) + "';"
+
+          
+		      let popupContent =  "<ul>" +
+            "<li>ID: " + feature.id + "</li>" +
             "<li>Sorte: " + feature.properties.cultivar + "</li>" +
             "<li>Familie: " + feature.properties.family + "</li>" +
             "<li>Gattung: " + feature.properties.kind + "</li>" +
@@ -47,7 +67,8 @@
             "<a href=" + feature.properties.wikipediaLink + ">wiki</a>" +
             "</li>" +
             "<li>Pos: " + String(feature.geometry.coordinates) + "</li>" +
-            "</ul>"
+            "</ul>" +
+            "<button type=\"button\" onclick=\"" + jsInjection + "\">update</button>"
 
 		      layer.bindPopup(popupContent)
 	      },
@@ -62,6 +83,7 @@
           })
         }
       }).addTo(map)
+
     })
 
   }

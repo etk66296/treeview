@@ -173,32 +173,35 @@
 <div class="form-popup" id="addTreeForm">
   <form action="src/addTree.php" class="form-container" method="post" name="addTreeForm" id="addTreeForm" autocomplete="off">
     <div>
+    <input id="idTreeIDHiddenInput" type="hidden" placeholder="" name="treeid" required>
+    </div>
+    <div>
     <label for="cultivar">Sorte_____</label>
-    <input type="text" placeholder="Schöne aus Boskoop" name="cultivar" required>
+    <input id="idCultivarInput" type="text" placeholder="Schöne aus Boskoop" name="cultivar" required>
     </div>
     <div>
     <label for="family">Familie___</label>
-    <input type="text" placeholder="Rosengewächse" name="family" required>
+    <input id="idFamilyInput" type="text" placeholder="Rosengewächse" name="family" required>
     </div>
     <div>
     <label for="kind">Gattung___</label>
-    <input type="text" placeholder="Apfel" name="kind" required>
+    <input id="idKindInput" type="text" placeholder="Apfel" name="kind" required>
     </div>
     <div>
     <label for="wikiLink">Wikipedia_</label>
-    <input type="text" placeholder="https://de.wikipedia.org/wiki/Sch%C3%B6ner_aus_Boskoop" name="wikiLink" required>
+    <input id="idwikiLinkInput" type="text" placeholder="https://de.wikipedia.org/wiki/Sch%C3%B6ner_aus_Boskoop" name="wikiLink" required>
     </div>
     <div>
     <label for="long">Long______</label>
-    <input type="text" placeholder="9.4029688" name="long" required>
+    <input id="idLongInput" type="text" placeholder="9.4029688" name="long" required>
     </div>
     <div>
     <label for="lat">Lat_______</label>
-    <input type="text" placeholder="48.6792663" name="lat" required>
+    <input id="idLatInput" type="text" placeholder="48.6792663" name="lat" required>
     </div>
     <div>
     <label for="plantingYear">Pflanzjahr</label>
-    <input type="text" placeholder="ca. 1960" name="plantingYear" required>
+    <input id="idplantingYearInput" type="text" placeholder="ca. 1960" name="plantingYear" required>
     </div>
     <div>
     <label for="situation">Zustand___</label>
@@ -223,13 +226,14 @@
       </select>
     </div>
     <div>
-      <button type="submit" class="btn">add</button>
+      <button id="idSubmitButton" type="submit" class="btn">add</button>
     </div>
   </form>
 </div>
 <script>
 var isOpen = false
 function openaddTreeForm() {
+  document.getElementById('idSubmitButton').innerHTML = 'add';
   if (isOpen) {
     document.getElementById("addTreeForm").style.display = "none";
     isOpen = false
