@@ -173,7 +173,7 @@
 <div class="form-popup" id="addTreeForm">
   <form action="src/addTree.php" class="form-container" method="post" name="addTreeForm" id="addTreeForm" autocomplete="off">
     <div>
-    <input id="idTreeIDHiddenInput" type="hidden" placeholder="" name="treeid" required>
+    <input id="idTreeIDHiddenInput" type="hidden" name="treeid" required>
     </div>
     <div>
     <label for="cultivar">Sorte_____</label>

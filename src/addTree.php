@@ -28,12 +28,21 @@
 	  // converts json data into array
     $existing_arr_data = json_decode($jsondata, true);
     
-    
-
-    if (strlen($formdata['id']) > 0) { // if the client sends an id it is an update
-      print_r($formdata['id']);
+    if (strlen($formdata['id']) > 0) { // if the client sends an id it is an update  
       // lets find the tree to update by the id
-
+      foreach($existing_arr_data['features'] as &$item) {
+        if ((int)$item['id'] == (int)$formdata['id']) {
+          // change the values by the reference &$item
+          $item['properties']['cultivar'] = $formdata['cultivar'];
+          $item['properties']['family'] = $formdata['family'];
+          $item['properties']['kind'] = $formdata['kind'];
+          $item['properties']['plantingYear'] = $formdata['plantingYear'];
+          $item['properties']['health'] = $formdata['health'];
+          $item['properties']['situation'] = $formdata['situation'];
+          $item['properties']['wikipediaLink'] = $formdata['wikiLink'];
+          $item['geometry']['coordinates'] = array($formdata['long'], $formdata['lat']);
+        }
+      }    
     } else {
       $lastTreeCpy = end($existing_arr_data['features']);// copy the last element
       $lastTreeCpy['id'] = $lastTreeCpy['id'] + 1;
@@ -65,5 +74,5 @@
    }
 
   /*Return*/
-  // exit(header("location:../index.php"));
+  exit(header("location:../index.php"));
 ?>

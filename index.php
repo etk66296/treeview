@@ -40,6 +40,8 @@
         },
         onEachFeature: (feature, layer) => {
 
+          console.log(feature.id)
+
           let jsInjection = "" +
             "openaddTreeForm();" +
             "document.getElementById('idSubmitButton').innerHTML = 'update';" + 
