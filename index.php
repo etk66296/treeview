@@ -15,15 +15,17 @@
 <script>
   window.onload = function() {
 
+    const maxBounds = [
+        [48.643634655634429, 9.3110459698857237],
+        [48.689767005793307, 9.5100841434319978]
+      ]
+
     var map = L.map('mapid', {
       center: [48.666700830713864, 9.41056505665886],
       zoom: 14,
       minZoom: 12,
       maxZoom: 18,
-      maxBounds: [
-        [48.643634655634429, 9.3110459698857237],
-        [48.689767005793307, 9.5100841434319978]
-      ]
+      maxBounds: maxBounds
     })
 
     L.tileLayer('assets/maps/tiles/{z}/{x}/{y}.png', {

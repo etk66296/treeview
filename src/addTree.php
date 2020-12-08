@@ -4,6 +4,11 @@
   ini_set('display_startup_errors', '1');
   error_reporting(E_ALL);
 
+  // backup data
+  if (!copy("../assets/treeData/treeData.json", "../assets/treeData/treeDataBackup.json")) {
+    exit();
+  }
+
   $myFile = "../assets/treeData/treeData.json";
   $existing_arr_data = array(); // create empty array
   try
@@ -24,9 +29,21 @@
     
     //Get data from existing json file
     $jsondata = file_get_contents($myFile);
+
     
 	  // converts json data into array
     $existing_arr_data = json_decode($jsondata, true);
+    $lat_min = $existing_arr_data["maxBounds"][0][0];
+    $long_min = $existing_arr_data["maxBounds"][0][1];
+    $lat_max = $existing_arr_data["maxBounds"][1][0];
+    $long_max = $existing_arr_data["maxBounds"][1][1];
+
+    // does the coordiantes point to the map?
+    if ($formdata['long'] < $long_min || $formdata['long'] > $long_max || $formdata['lat'] < $lat_min || $formdata['lat'] > $lat_max) {
+      print_r('coordinates out of map range (Bitte Wendlinger Koordinaten vergeben)');
+      print_r($existing_arr_data["maxBounds"]);
+      exit();
+    }
     
     if (strlen($formdata['id']) > 0) { // if the client sends an id it is an update  
       // lets find the tree to update by the id
