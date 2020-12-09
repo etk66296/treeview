@@ -13,13 +13,22 @@ requestTreeLayerData = function(url, onSuccess) {
   xmlhttp.send()
 }
 
-loginRequest = function() {
+postRequest = function(onSuccess, params, url) {
   var xhttp = new XMLHttpRequest()
     xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-       console.log("Hello Login")
+       onSuccess(this.response)
     }
   }
-  xhttp.open("POST", "http://localhost:9999/login.php", true);
-  xhttp.send();
+  xhttp.open("POST", url, true)
+  xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhttp.send(params)
+}
+
+loginRequest = function(onSuccess, params) {
+  postRequest(onSuccess, params, "http://localhost:9999/submit.php")
+}
+
+connectRequest = function(onSuccess, user) {
+  postRequest(onSuccess, user, "http://localhost:9999/src/connect.php")
 }
