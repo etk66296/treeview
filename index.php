@@ -35,8 +35,9 @@
     }).addTo(map)
 
     // show the trees
+    var treesLayer = null
     requestTreeLayerData('assets/treeData/treeData.json', (response) => {
-      L.geoJSON(response, {
+      treesLayer = L.geoJSON(response, {
         userFunction: () => {
           console.log("Hello")
         },
@@ -82,13 +83,47 @@
             fillColor: "#ff7800",
             color: "#00ff00",
             weight: 2,
-            opacity: 1,
+            opacity: 0.6,
             fillOpacity: 0.5
           })
         }
       }).addTo(map)
 
     })
+
+    // zoom event
+    map.on('zoomend', (event) => {
+        const currentZoom = map.getZoom()
+        treesLayer.eachLayer((treeLayer) => {
+          switch(currentZoom) {
+            case 12:
+              treeLayer.setRadius(3)
+            break
+            case 13:
+              treeLayer.setRadius(4)
+            break
+            case 14:
+              treeLayer.setRadius(5)
+            break
+            case 15:
+              treeLayer.setRadius(6)
+            break
+            case 16:
+              treeLayer.setRadius(7)
+            break
+            case 17:
+              treeLayer.setRadius(10)
+            break
+            case 18:
+              treeLayer.setRadius(18)
+            break
+            default:
+              treeLayer.setRadius(6)
+            break
+          }
+        })
+    })
+
 
   }
 </script>

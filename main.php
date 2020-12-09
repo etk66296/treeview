@@ -15,17 +15,15 @@
     })
 
     L.tileLayer('assets/maps/tiles/{z}/{x}/{y}.png', {
-      attribution: 'Map tiles generated for local use by' +
-        '<a href="http://maperitive.net">Maperitive</a>, under' +
-        '<a href="http://creativecommons.org/licenses/by/3.0">' +
-        'CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">' +
+      attribution: 'CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">' +
         'OpenStreetMap</a>, under' +
         '<a href="http://www.openstreetmap.org/copyright">ODbL</a>.'
     }).addTo(map)
 
     // show the trees
+    var treesLayer = null
     requestTreeLayerData('assets/treeData/treeData.json', (response) => {
-      L.geoJSON(response, {
+      treesLayer = L.geoJSON(response, {
         onEachFeature: (feature, layer) => {
 		      let popupContent =  "<ul>" + 
             "<li>Sorte: " + feature.properties.cultivar + "</li>" +
@@ -52,6 +50,39 @@
           })
         }
       }).addTo(map)
+    })
+
+    // zoom event
+    map.on('zoomend', (event) => {
+        const currentZoom = map.getZoom()
+        treesLayer.eachLayer((treeLayer) => {
+          switch(currentZoom) {
+            case 12:
+              treeLayer.setRadius(3)
+            break
+            case 13:
+              treeLayer.setRadius(4)
+            break
+            case 14:
+              treeLayer.setRadius(5)
+            break
+            case 15:
+              treeLayer.setRadius(6)
+            break
+            case 16:
+              treeLayer.setRadius(7)
+            break
+            case 17:
+              treeLayer.setRadius(10)
+            break
+            case 18:
+              treeLayer.setRadius(18)
+            break
+            default:
+              treeLayer.setRadius(6)
+            break
+          }
+        })
     })
   }
 </script>
