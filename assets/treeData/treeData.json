@@ -1,7 +1,13 @@
 {
     "maxBounds": [
-      [48.646351, 9.352628],
-      [48.689998, 9.429017]
+        [
+            48.646351,
+            9.352628
+        ],
+        [
+            48.689998,
+            9.429017
+        ]
     ],
     "type": "FeatureCollection",
     "features": [
@@ -26,7 +32,7 @@
             }
         },
         {
-            "id": 1000,
+            "id": 1,
             "type": "Feature",
             "properties": {
                 "cultivar": "Pinova",
@@ -42,6 +48,266 @@
                 "coordinates": [
                     "9.392676",
                     "48.664001"
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "type": "Feature",
+            "properties": {
+                "cultivar": "Katinka",
+                "family": "Rosengew\u00e4chse",
+                "kind": "Zwetschge",
+                "plantingYear": "2018",
+                "health": "sehr gesund",
+                "situation": "gut",
+                "wikipediaLink": "https:\/\/www.lwg.bayern.de\/gartenbau\/obstbau\/085551\/index.php"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "9.392617",
+                    "48.666402"
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "type": "Feature",
+            "properties": {
+                "cultivar": "unbekannt",
+                "family": "Rosengew\u00e4chse",
+                "kind": "Apfel",
+                "plantingYear": "unbekannt",
+                "health": "mittel gesund",
+                "situation": "mittel",
+                "wikipediaLink": "https:\/\/de.wikipedia.org\/wiki\/Kulturapfel"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "9.392794",
+                    "48.666354"
+                ]
+            }
+        },
+        {
+            "id": 4,
+            "type": "Feature",
+            "properties": {
+                "cultivar": "unbekannt",
+                "family": "Rosengew\u00e4chse",
+                "kind": "Apfel",
+                "plantingYear": "unbekannt",
+                "health": "sehr gesund",
+                "situation": "schlecht",
+                "wikipediaLink": "https:\/\/de.wikipedia.org\/wiki\/Kulturapfel"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "9.392706",
+                    "48.666379"
+                ]
+            }
+        },
+        {
+            "id": 5,
+            "type": "Feature",
+            "properties": {
+                "cultivar": "unbekannt",
+                "family": "Rosengew\u00e4chse",
+                "kind": "Apfel",
+                "plantingYear": "unbekannt",
+                "health": "weniger gesund",
+                "situation": "mittel",
+                "wikipediaLink": "https:\/\/de.wikipedia.org\/wiki\/Kulturapfel"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "9.392533",
+                    "48.666410"
+                ]
+            }
+        },
+        {
+            "id": 6,
+            "type": "Feature",
+            "properties": {
+                "cultivar": "Topaz",
+                "family": "Rosengew\u00e4chse",
+                "kind": "Apfel",
+                "plantingYear": "2018",
+                "health": "gesund",
+                "situation": "gut",
+                "wikipediaLink": "https:\/\/de.wikipedia.org\/wiki\/Topaz"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "9.392448",
+                    "48.666436"
+                ]
+            }
+        },
+        {
+            "id": 7,
+            "type": "Feature",
+            "properties": {
+                "cultivar": "unbekannt",
+                "family": "Rosengew\u00e4chse",
+                "kind": "Apfel",
+                "plantingYear": "unbekannt",
+                "health": "mittel krank",
+                "situation": "mittel",
+                "wikipediaLink": "https:\/\/de.wikipedia.org\/wiki\/Kulturapfel"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "9.392361",
+                    "48.666455"
+                ]
+            }
+        },
+        {
+            "id": 8,
+            "type": "Feature",
+            "properties": {
+                "cultivar": "Jakob Fischer",
+                "family": "Rosengew\u00e4chse",
+                "kind": "Apfel",
+                "plantingYear": "2020",
+                "health": "gesund",
+                "situation": "mittel",
+                "wikipediaLink": "https:\/\/de.wikipedia.org\/wiki\/Jakob_Fischer_(Apfel)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "9.392206",
+                    "48.666489"
+                ]
+            }
+        },
+        {
+            "id": 9,
+            "type": "Feature",
+            "properties": {
+                "cultivar": "unbekannt",
+                "family": "Rosengew\u00e4chse",
+                "kind": "Apfel",
+                "plantingYear": "unbekannt",
+                "health": "krank",
+                "situation": "mittel",
+                "wikipediaLink": "https:\/\/de.wikipedia.org\/wiki\/Kulturapfel"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "9.392274",
+                    "48.666478"
+                ]
+            }
+        },
+        {
+            "id": 10,
+            "type": "Feature",
+            "properties": {
+                "cultivar": "unbekannt",
+                "family": "Rosengew\u00e4chse",
+                "kind": "Apfel",
+                "plantingYear": "unbekannt",
+                "health": "mittel gesund",
+                "situation": "mittel",
+                "wikipediaLink": "https:\/\/de.wikipedia.org\/wiki\/Kulturapfel"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "9.392096",
+                    "48.666504"
+                ]
+            }
+        },
+        {
+            "id": 11,
+            "type": "Feature",
+            "properties": {
+                "cultivar": "unbekannt",
+                "family": "Rosengew\u00e4chse",
+                "kind": "Apfel",
+                "plantingYear": "unbekannt",
+                "health": "weniger gesund",
+                "situation": "mittel",
+                "wikipediaLink": "https:\/\/de.wikipedia.org\/wiki\/Kulturapfel"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "9.392009",
+                    "48.666529"
+                ]
+            }
+        },
+        {
+            "id": 12,
+            "type": "Feature",
+            "properties": {
+                "cultivar": "unbekannt",
+                "family": "Rosengew\u00e4chse",
+                "kind": "Apfel",
+                "plantingYear": "unbekannt",
+                "health": "weniger gesund",
+                "situation": "mittel",
+                "wikipediaLink": "https:\/\/de.wikipedia.org\/wiki\/Kulturapfel"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "9.391920",
+                    "48.666550"
+                ]
+            }
+        },
+        {
+            "id": 13,
+            "type": "Feature",
+            "properties": {
+                "cultivar": "unbekannt",
+                "family": "Rosengew\u00e4chse",
+                "kind": "Apfel",
+                "plantingYear": "unbekannt",
+                "health": "leicht krank",
+                "situation": "mittel",
+                "wikipediaLink": "https:\/\/de.wikipedia.org\/wiki\/Kulturapfel"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "9.391836",
+                    "48.666566"
+                ]
+            }
+        },
+        {
+            "id": 14,
+            "type": "Feature",
+            "properties": {
+                "cultivar": "unbekannt",
+                "family": "Rosengew\u00e4chse",
+                "kind": "Apfel",
+                "plantingYear": "unbekannt",
+                "health": "leicht krank",
+                "situation": "mittel",
+                "wikipediaLink": "https:\/\/de.wikipedia.org\/wiki\/Kulturapfel"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "9.391767",
+                    "48.666577"
                 ]
             }
         }

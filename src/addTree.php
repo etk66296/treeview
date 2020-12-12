@@ -90,6 +90,9 @@
       exit();
    }
 
-  /*Return*/
-  exit(header("location:../index.php"));
+  ?>
+    <script type="text/javascript">
+      window.location.href = 'https://www.ogv-wendlingen.de/treeview/index.php';
+    </script>
+  <?php
 ?>

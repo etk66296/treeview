@@ -31,7 +31,7 @@ if(!empty($_POST) && $_POST['Action'] == 'login_form'){
     }
 
     /* Check Email and Password existence in DB */
-    $result = mysqli_query($con, "SELECT * FROM tbl_users WHERE email='$email' AND password='".md5($password)."' LIMIT 1");
+    $result = mysqli_query($con, "SELECT * FROM Users WHERE EmailAddress='$email' AND Password='".md5($password)."' LIMIT 1");
     
     if(mysqli_num_rows($result)==1){
         $row = mysqli_fetch_assoc($result);

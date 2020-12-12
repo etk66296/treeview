@@ -73,10 +73,10 @@
               treeLayer.setRadius(7)
             break
             case 17:
-              treeLayer.setRadius(10)
+              treeLayer.setRadius(8)
             break
             case 18:
-              treeLayer.setRadius(18)
+              treeLayer.setRadius(9)
             break
             default:
               treeLayer.setRadius(6)

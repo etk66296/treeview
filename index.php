@@ -38,12 +38,7 @@
     var treesLayer = null
     requestTreeLayerData('assets/treeData/treeData.json', (response) => {
       treesLayer = L.geoJSON(response, {
-        userFunction: () => {
-          console.log("Hello")
-        },
         onEachFeature: (feature, layer) => {
-
-          console.log(feature.id)
 
           let jsInjection = "" +
             "openaddTreeForm();" +
@@ -112,10 +107,10 @@
               treeLayer.setRadius(7)
             break
             case 17:
-              treeLayer.setRadius(10)
+              treeLayer.setRadius(8)
             break
             case 18:
-              treeLayer.setRadius(18)
+              treeLayer.setRadius(9)
             break
             default:
               treeLayer.setRadius(6)
