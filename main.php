@@ -25,25 +25,41 @@
     requestTreeLayerData('assets/treeData/treeData.json', (response) => {
       treesLayer = L.geoJSON(response, {
         onEachFeature: (feature, layer) => {
-		      let popupContent =  "<ul>" + 
-            "<li>Sorte: " + feature.properties.cultivar + "</li>" +
-            "<li>Familie: " + feature.properties.family + "</li>" +
-            "<li>Gattung: " + feature.properties.kind + "</li>" +
-            "<li>Pflanzjahr: " + feature.properties.plantingYear + "</li>" +
-            "<li>Gesundheitszustand: " + feature.properties.health + "</li>" +
-            "<li>Pflegezustamnd: " + feature.properties.situation + "</li>" +
-            "<li>" + 
-            "<a href=" + feature.properties.wikipediaLink + ">wiki</a>" +
-            "</li>" +
-            "<li>Pos: " + String(feature.geometry.coordinates) + "</li>" +
-            "</ul>"
+		      let popupContent =  '<ul>' + 
+            '<li>Sorte: ' + feature.properties.cultivar + '</li>' +
+            '<li>Familie: ' + feature.properties.family + '</li>' +
+            '<li>Gattung: ' + feature.properties.kind + '</li>' +
+            '<li>Pflanzjahr: ' + feature.properties.plantingYear + '</li>' +
+            '<li>Gesundheitszustand: ' + feature.properties.health + '</li>' +
+            '<li>Pflegezustamnd: ' + feature.properties.situation + '</li>' +
+            '<li>' + 
+            '<a href=' + feature.properties.wikipediaLink + '>wiki</a>' +
+            '</li>' +
+            '<li>Pos: ' + String(feature.geometry.coordinates) + '</li>' +
+            '</ul>'
 		      layer.bindPopup(popupContent)
 	      },
         pointToLayer: function (feature, latlng) {
+          let innercolor = ''
+          let bordercolor = ''
+          if (feature.properties.kind === 'Apfel') {
+            innercolor = '#f42a02'
+            bordercolor = '#a5018f'
+          } else if (feature.properties.kind === 'Birne') {
+            innercolor = '#c8f402'
+            bordercolor =  '#5c6301'
+          } else if (feature.properties.kind === 'Zwetschge') {
+            innercolor = '#4302f4'
+            bordercolor = '#9b02f4'
+          } else {
+            innercolor = '#02d8f4'
+            bordercolor = '#0273f4'
+          }
+
           return L.circleMarker(latlng, {
             radius: 4,
-            fillColor: "#ff7800",
-            color: "#00ff00",
+            fillColor: innercolor,
+            color: bordercolor,
             weight: 2,
             opacity: 1,
             fillOpacity: 0.5
