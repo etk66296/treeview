@@ -176,35 +176,35 @@
     <input id="idTreeIDHiddenInput" type="hidden" name="treeid" required>
     </div>
     <div>
-    <label for="cultivar">Sorte_____</label>
+    <label for="cultivar">Sorte______________</label>
     <input id="idCultivarInput" type="text" placeholder="Schöne aus Boskoop" name="cultivar" required>
     </div>
     <div>
-    <label for="family">Familie___</label>
+    <label for="family">Familie____________</label>
     <input id="idFamilyInput" type="text" placeholder="Rosengewächse" name="family" required>
     </div>
     <div>
-    <label for="kind">Gattung___</label>
+    <label for="kind">Gattung____________</label>
     <input id="idKindInput" type="text" placeholder="Apfel" name="kind" required>
     </div>
     <div>
-    <label for="wikiLink">Wikipedia_</label>
+    <label for="wikiLink">Wikipedia__________</label>
     <input id="idwikiLinkInput" type="text" placeholder="https://de.wikipedia.org/wiki/Sch%C3%B6ner_aus_Boskoop" name="wikiLink" required>
     </div>
     <div>
-    <label for="long">Long______</label>
+    <label for="long">Long_______________</label>
     <input id="idLongInput" type="text" placeholder="9.4029688" name="long" required>
     </div>
     <div>
-    <label for="lat">Lat_______</label>
+    <label for="lat">Lat________________</label>
     <input id="idLatInput" type="text" placeholder="48.6792663" name="lat" required>
     </div>
     <div>
-    <label for="plantingYear">Pflanzjahr</label>
+    <label for="plantingYear">Pflanzjahr__________</label>
     <input id="idplantingYearInput" type="text" placeholder="ca. 1960" name="plantingYear" required>
     </div>
     <div>
-    <label for="situation">Zustand___</label>
+    <label for="situation">Pflegezustand_______</label>
       <select id="TreeSituation" name="situation">
         <option value="gut">gut</option>
         <option value="mittel">mittel</option>
@@ -212,7 +212,7 @@
       </select>
     </div>
     <div>
-    <label for="health">Gesundheit</label>
+    <label for="health">Gesundheitszustand_</label>
       <select id="TreeHealth" name="health">
         <option value="sehr gesund">sehr gesund</option>
         <option value="gesund">gesund</option>
